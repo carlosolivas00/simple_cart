@@ -1,12 +1,13 @@
 # simple_cart
 This app demonstrates:
-  	product search 
- 	  product information view
-  	shopping cart
- 	  product addition
+o	product search 
+o	product information view
+o	shopping cart
+o	product addition
  
 Technologies:
-	Django
-	MySQL
-	jQuery
-	Bootstrap 4 
+o	Django
+o	MySQL
+o	jQuery
+o	Bootstrap 4 
+
