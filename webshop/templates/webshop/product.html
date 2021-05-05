@@ -1,0 +1,25 @@
+{% extends 'webshop/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div id="message" style="display:none;" class="fixed-top text-center btn btn-secondary">Item has been added</div>
+<h4 class="text-center">{{product.name}}</h4>
+<h5 class="text-center">${{product.price}}</h5>
+<h6 class="text-center">{{product.description}}</h6>
+<button value="{{product.id}}" class="btn btn-primary add_to_cart_btn float-right">Add to Cart</button>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+$(document).on("click",".add_to_cart_btn", function(){
+  $.ajax({
+    url: "{%url 'add_to_cart'%}",
+    data: {'product_id': $(this).val()},
+    success: function(data) {
+       $('#message').fadeIn('slow', function(){
+           $('#message').delay(1000).fadeOut();
+        });
+    }
+  });
+});
+</script>
+{% endblock %}

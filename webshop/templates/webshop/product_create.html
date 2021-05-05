@@ -1,0 +1,28 @@
+{% extends 'webshop/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <legend class="border-bottom mb-4"> Create Product</legend>
+    <form method="POST">
+        {%csrf_token%}
+        <div class="form-row">
+            <div class="col-4">
+              {{form.code | as_crispy_field}}
+            </div>
+            <div class="col-4">
+              {{form.name | as_crispy_field}}
+            </div>
+            <div class="col-4">
+              {{form.price | as_crispy_field}}
+            </div>
+            <div class="col-12">
+              {{form.description | as_crispy_field}}
+            </div>
+          </div>
+        <div class="form-group pt-2">
+            <button class="btn btn-outline-success"  type="submit" id="submit"> Create </button>
+        </div>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+{% endblock%}

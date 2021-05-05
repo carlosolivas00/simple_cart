@@ -1,0 +1,13 @@
+{% block content %}
+{%for product in products%}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">${{product.price}}</p>
+            <p class="card-text">{{product.description}}</p>
+            <a href="{%url 'product' product.id %}" class="btn btn-primary">See Product</a>
+            <button value="{{product.id}}" class="btn btn-primary add_to_cart_btn">Add to Cart</button>
+        </div>
+    </div>
+{%endfor%}
+{% endblock %}
